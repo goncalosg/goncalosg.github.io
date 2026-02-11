@@ -1,13 +1,3 @@
-    // Gonçalo Gomes, Nº 3220794
-    // Exercício de avaliação - Portfólio
-    // Ano letivo - 3º ano, 2024-2025
-    // 2º Semestre
-    // Laboratório de Projeto II
-    // Design Gráfico e Multimédia
-    // Escola Superior de Artes e Design - Instituto Politécnico de Leiria
-    // Docente: Marco Heleno
-    // Data de avaliação: 08⁄Junho⁄2025
-
 // Declaração de variáveis globais
 let cursor_element; // elemento HTML que representa o cursor personalizado
 let current_x = 0;
