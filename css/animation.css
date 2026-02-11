@@ -1,0 +1,135 @@
+    /* Gonçalo Gomes, Nº 3220794
+    Exercício de avaliação - Portfólio
+    Ano letivo - 3º ano, 2024-2025
+    2º Semestre
+    Laboratório de Projeto II
+    Design Gráfico e Multimédia
+    Escola Superior de Artes e Design - Instituto Politécnico de Leiria
+    Docente: Marco Heleno
+    Data de avaliação: 08⁄Junho⁄2025 */
+
+/* Animação do underline a entrar de um lado e a sair para o outro */
+@keyframes underline-in { /* Animação de entrada */
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50.01% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes underline-out { /* Animação de saída (unhover) */
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50.01% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+/* Animação dos elementos ao dar scroll */
+.autoShow { 
+    animation: text-appear both 1.5s ease; /* Aplica a animação 'text-appear' com duração de 1.5s */
+    animation-timeline: view(); /* Animação é ativada com base na posição do elemento no viewport */
+    animation-range: entry 20% cover 70vh; /* A animação começa quando 20% do elemento entra na viewport e termina ao cobrir 70vh */
+}
+
+/* Keyframes */
+@keyframes text-appear {
+    from {
+        opacity: 1;
+        transform: translateY(150px); /* Começa 150px abaixo da posição original */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina na posição original */
+    }
+} 
+
+.autoShow-featured {
+    animation: text-appear both 1.5s ease;
+    animation-timeline: view();
+    animation-range: entry 50% cover 90vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 1;
+        transform: translateY(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.autoShow-image {
+    animation: text-appear both 0.3s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 5% cover 70vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.autoShow-nextproject {
+    animation: text-appear both 0.3s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 10% cover 70vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 1;
+        transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.autoShow-footer {
+    animation: text-appear both 1.5s ease;
+    animation-timeline: view();
+    animation-range: entry 1%;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
