@@ -854,7 +854,8 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 15rem;
+    margin-bottom: 25rem;
   }
   
 .about-container, .experience-container {
@@ -862,10 +863,6 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   display: flex;
   justify-content: space-between;
   align-items: end;
-}
-  
-.about-container { /* Para ficar no fim da página */
-  min-height: 85vh; 
 }
 
   .image-placeholder-about { /* Imagem à direita */
@@ -886,37 +883,41 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 
   .about-data { /* texto sobre mim */
     width: 60%;
-    padding-bottom: 1.5rem;
   }
 
-.about-data h2, .experience-container h2 {
+.experience-container h2 {
   font-family: "fontmedium";
   font-weight: 400;
   line-height: 1.1;
 }
 
   .about-data h2 {
-    font-size: 5rem;
+        font-size: 1.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+      .about-data h3 {
+    font-size: 1.25rem;
+    opacity: 50%;
   }
 
   .about-data p {
     font-family: "fontregular";
-    font-size: 1.12rem;
-    width: 55%;
-    padding: 1rem 0;
+    font-size: 1.25rem;
+    width: 50%;
+    padding: 2rem 0;
   }
 
   .social-links-about { /* Links de redes sociais */
   display: flex;
   list-style: none;
   gap: 2rem;
-  padding-top: 1rem;
 }
 
 .social-links-about a {
     color: #171718;
     font-family: "fontregular";
-    font-size: 1.12rem;
+    font-size: 1.25rem;
     padding-bottom: 0.3rem;
     position: relative;
     transition: color 0.3s ease-in-out;
@@ -970,7 +971,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 .work-text {
     width: 100%;
     text-align: left;
-    border-bottom: solid rgba(14, 14, 14, 0.2);
+    border-bottom: 1px solid #ddd;
 }
 
 .work-text h3 {
@@ -996,7 +997,7 @@ dl {
     display: flex;
     width: 100%;
     justify-content: space-between;
-     border-bottom: solid rgba(14, 14, 14, 0.2);
+     border-bottom: 1px solid #ddd;
     padding: 1.5rem 0;
 }
 
