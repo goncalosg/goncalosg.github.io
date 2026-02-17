@@ -332,23 +332,25 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 16rem 0 2rem 0;
-  gap: 8rem;
 }
 
 .collaborate {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 18rem;
 }
 
 .collaborate-container {
     width: 93%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .collaborate-container a {
-    font-size: 13.9vw;
-    font-family: "fontmedium";
+    font-size: 4rem;
+    font-family: "fontregular";
 }
 
 /* Footer */
