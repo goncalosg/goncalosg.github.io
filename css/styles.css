@@ -1098,25 +1098,17 @@ dd {
     }
 
     /* CTA */
+    .collaborate {
+    padding: 10rem 0;     /* em vez de padding:18rem no desktop */
+    }
+
     .collaborate-container a {
-        font-size: 13.9vw;
+    font-size: 2.5rem;
+    width: auto;         /* não forces 100% */
+    padding: 0;          /* remove padding do link */
     }
 
     /* Footer */
-    .contact-block {
-        padding: 10rem 0 1rem 0;
-        gap: 6rem;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: end;
-    }
-
-    .footer-left p, .social-links a {
-        font-size: 1.2rem;
-    }
 
     /* WORKS PAGE */
     .allworks-section {
@@ -1347,20 +1339,36 @@ dd {
     }
 
     /* CTA */
+    .collaborate {
+    padding: 10rem 0;     /* em vez de padding:18rem no desktop */
+    }
+
     .collaborate-container a {
-        font-size: 13.8vw;
+    font-size: 2rem;
+    width: auto;         /* não forces 100% */
+    padding: 0;          /* remove padding do link */
     }
 
     /* Footer */
-    .contact-block {
-        padding: 8rem 0 1rem 0;
-        gap: 4rem;
-    }
-
     .footer-container {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 3rem;
+    }
+
+.footer-right {
+    margin-left: 0;      /* remove empurrão para direita */
+    width: 100%;         /* ocupa largura normal */
+    gap: 4rem;           /* opcional: menos espaço */
+  }
+
+    .footer-links {
+        column-gap: 3rem;
+    }
+
+    .footer-rights {
+        padding-top: 0.5rem;
+        font-size: 1rem;
     }
 
     .social-links {
@@ -1369,17 +1377,9 @@ dd {
         align-items: start;
     }
 
-    .footer-left p, .social-links a {
-        font-size: 1rem;
+    .social-links a {
+        font-size: 1.25rem;
     }
-
-    .footer-left {
-        order: 2;
-      }
-    
-      .footer-right {
-        order: 1;
-      }
 
       /* WORKS PAGE */
     .allworks-container h2 {
