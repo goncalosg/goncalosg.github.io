@@ -124,6 +124,16 @@
     }
 } 
 
+/* animação seta */
+.talk{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding-bottom: 0.1rem;
+}
+
 /* texto */
 .label{
   transition: transform .35s ease;
