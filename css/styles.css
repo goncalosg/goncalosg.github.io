@@ -505,7 +505,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     padding: 1.7rem 0;
     position: relative;
     transition: all 0.3s ease;
-    border-bottom: 1px solid #c8c7c7;
+    border-bottom: solid #c8c7c7;
 }
 
 .projects_list h3,
