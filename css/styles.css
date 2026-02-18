@@ -845,7 +845,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   justify-content: center;
   text-align: center;
   color: #FAFAFA;
-  gap: 3rem; /* espaço entre linhas */
+  gap: 1.5rem; /* espaço entre linhas */
 }
 
 .text-wrapper p{
@@ -915,7 +915,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 .text-wrapper .swap-title::after{
   content:"";
   position:absolute;
-  bottom: 0;
+  bottom: 0.5rem;
   height: 2px;
   background: #FAFAFA;
 
