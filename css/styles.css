@@ -1017,12 +1017,12 @@ dd {
     width: 50%;
 }
 
-/*
+
 @media (hover: none), (pointer: coarse) {
   #meu_cursor {
     display: none !important;
   }
-} */
+}
 
 @media (max-width: 1024px) {
     /* TABLET */
@@ -1081,7 +1081,7 @@ dd {
 
     /* CTA */
     .collaborate {
-    padding: 10rem 0;     /* em vez de padding:18rem no desktop */
+    padding: 11rem 0;     /* em vez de padding:18rem no desktop */
     }
 
     .collaborate-container a {
