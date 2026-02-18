@@ -197,3 +197,38 @@
 .talk:not(:hover)::after{
   transform-origin: right;
 }
+
+.swap{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+/* textos */
+.swap .line{
+  display: block;
+  transition: transform .45s ease;
+}
+
+/* texto visível */
+.swap .line-top{
+  transform: translateY(0);
+}
+
+/* texto escondido */
+.swap .line-bottom{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(100%);
+}
+
+/* hover */
+.swap:hover .line-top{
+  transform: translateY(-100%);
+}
+
+.swap:hover .line-bottom{
+  transform: translateY(0);
+}

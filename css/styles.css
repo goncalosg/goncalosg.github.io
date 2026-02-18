@@ -342,11 +342,24 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 2rem;
 }
 
 .collaborate-container a {
     font-size: 4rem;
     font-family: "fontregular";
+}
+
+.collaborate-container p {
+    font-size: 1.12rem;
+}
+
+.text-wrapper1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Footer */
