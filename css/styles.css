@@ -54,7 +54,6 @@ a, button {
 }
 
 span { /* Spans com diferentes espaçamentos para cada "↗" */
-    padding-left: 0.5rem;
     display: inline-block;
     vertical-align: bottom;
     line-height: 1;
@@ -75,6 +74,13 @@ span { /* Spans com diferentes espaçamentos para cada "↗" */
 .span5 {
     padding-left: 0.3rem;
     line-height: 1.05;
+}
+
+.span6 { /* Spans com diferentes espaçamentos para cada "↗" */
+    padding-left: 0.5rem;
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 1;
 }
 
 /* HOME PAGE */
@@ -757,7 +763,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 5rem auto 2rem;
+    margin: 2rem auto 2rem;
 }
 
 .nextworks {
@@ -820,39 +826,114 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     object-position: center;
     position: relative;
     transition: transform 0.5s ease;
-    filter: brightness(0.8);
+    filter: brightness(0.6);
 }
 
 .nextimage a:hover img { /* Hover de zoom na imagem */
     transform: scale(1.02);
 }
 
-.nextimage p {
-    font-family: "fontregular";
-    font-size: 1.5rem;
-    color: #FAFAFA;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+.text-wrapper{
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FAFAFA;
+  gap: 3rem; /* espaço entre linhas */
 }
 
-.nextimage p::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0.15rem;
-  background-color: #FAFAFA;
-  margin-top: 0.1rem; /* Distância do sublinhado */
+.text-wrapper p{
+  margin: 0;
+  font-family: "fontregular";
+  color: #FAFAFA;
+  font-size: 1.25rem;
 }
 
-.nextimage p.animate-in::after { /* Quando dou hover */
-  animation: underline-in 0.8s forwards;
+/*animation */
+/* h2 */
+.text-wrapper .swap-title{
+  position: relative;
+  display: inline-block;
+  width: var(--wmax, max-content); 
+  max-width: 100%;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #FAFAFA;
 }
 
-.nextimage p.animate-out::after { /* Quando tiro o hover */
-  animation: underline-out 0.8s forwards;
+/* janela que recorta o movimento */
+.text-wrapper .swap-title .lines{
+  position: relative;
+  display: inline-block;
+  width: max-content;      /* <<< CRÍTICO: dá largura ao conteúdo */
+  height: 1.2em;           /* <<< evita cortar a fonte */
+  overflow: hidden;
+  padding-bottom: .35rem;  /* espaço para underline */
+}
+
+/* TOP fica “normal” para definir largura */
+.text-wrapper .swap-title .line.top{
+  position: relative;      /* <<< define a largura do bloco */
+  display: inline-flex;
+  white-space: nowrap;
+  justify-content: center;
+  gap: 0;
+  left: 0;
+  transform: none;
+}
+
+/* BOTTOM sobrepõe exatamente em cima do TOP */
+.text-wrapper .swap-title .line.bottom{
+  position: absolute;
+  justify-content: center;
+  left: 50%;
+  top: 0;
+  display: inline-flex;
+  white-space: nowrap;
+  gap: 0;
+  transform: translateX(-50%);
+}
+
+/* letras */
+.text-wrapper .swap-title .char{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  transition: transform .55s ease;
+  will-change: transform;
+}
+
+/* estados (bem escondido) */
+.text-wrapper .swap-title .top .char{ transform: translateY(0); }
+.text-wrapper .swap-title .bottom .char{ transform: translateY(150%); }
+
+/* hover só no h2 */
+.text-wrapper .swap-title:hover .top .char{ transform: translateY(-150%); }
+.text-wrapper .swap-title:hover .bottom .char{ transform: translateY(0); }
+
+/* underline animada por largura (controlada por JS) */
+.text-wrapper .swap-title::after{
+  content:"";
+  position:absolute;
+  bottom: 0;
+  height: 2px;
+  background: #FAFAFA;
+
+  /* agora o underline usa o centro real da palavra */
+  left: var(--cx, 50%);
+  width: var(--u, 0px);
+
+  transform: translateX(-50%);
+  transition: width .45s ease, left .45s ease;
+}
+
+.text-wrapper .swap-title:hover::after{
+  width: calc(var(--u-hover, var(--u, 0px)) - 6px);
 }
 
 /* ABOUT PAGE */

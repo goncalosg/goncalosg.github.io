@@ -89,6 +89,63 @@ function smoothScroll() {
     isScrolling = false; // Termina a animação quando chega perto do alvo
   }
 }
+function buildSwapTitle(el){
+    const topText = el.textContent.trim();
+    const bottomText = (el.dataset.hover || topText).trim();
 
+    const makeLine = (text, cls) => {
+      const line = document.createElement('span');
+      line.className = `line ${cls}`;
+
+      [...text].forEach((ch, i) => {
+        const s = document.createElement('span');
+        s.className = 'char';
+        s.textContent = ch === ' ' ? '\u00A0' : ch;
+        s.style.transitionDelay = `${i * 0.025}s`;
+        line.appendChild(s);
+      });
+
+      return line;
+    };
+
+    const lines = document.createElement('span');
+    lines.className = 'lines';
+
+    const topLine = makeLine(topText, 'top');
+    const bottomLine = makeLine(bottomText, 'bottom');
+
+    lines.appendChild(topLine);
+    lines.appendChild(bottomLine);
+
+    el.textContent = '';
+    el.appendChild(lines);
+
+    const update = () => {
+      // 1) altura segura da janela (em px)
+      const fs = parseFloat(getComputedStyle(el).fontSize) || 16;
+      lines.style.height = `${fs * 1.25}px`; // 1.25x costuma ser perfeito
+
+      // 2) widths para underline
+      const topW = topLine.getBoundingClientRect().width;
+      const botW = bottomLine.getBoundingClientRect().width;
+      el.style.setProperty('--u', `${topW}px`);
+      el.style.setProperty('--u-hover', `${botW}px`);
+    };
+
+    // esperar pelas fonts
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(() => {
+        update();
+        requestAnimationFrame(update);
+      });
+    } else {
+      requestAnimationFrame(update);
+      setTimeout(update, 80);
+    }
+
+    window.addEventListener('resize', update);
+  }
+
+  document.querySelectorAll('.swap-title').forEach(buildSwapTitle);
 
 });
