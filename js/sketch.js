@@ -33,9 +33,9 @@ function draw() {
   target_y = mouseY;
 
   // Lerp posição e tamanho
-  current_x = lerp(current_x, target_x, 0.8);
-  current_y = lerp(current_y, target_y, 0.8);
-  cursor_size = lerp(cursor_size, target_size, 0.35);
+  current_x = lerp(current_x, target_x, 0.2);
+  current_y = lerp(current_y, target_y, 0.2);
+  cursor_size = lerp(cursor_size, target_size, 0.30);
 
   cursor_element.size(cursor_size, cursor_size);
   cursor_element.style("border-radius", cursor_size / 2 + "px");
