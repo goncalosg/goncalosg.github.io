@@ -124,18 +124,12 @@
     }
 } 
 
-/* animação seta */
-.talk{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  padding-bottom: 0.1rem;
-}
-
 /* texto */
 .label{
+  transition: transform .35s ease;
+}
+
+.label2{
   transition: transform .35s ease;
 }
 
@@ -143,6 +137,12 @@
 .arrow{
     position: relative;
     top: 1px;
+  transition: transform .35s ease, opacity .2s ease;
+}
+
+.arrow2{
+    position: relative;
+    top: 2px;
   transition: transform .35s ease, opacity .2s ease;
 }
 
@@ -177,7 +177,18 @@
   transition-delay: .15s;
 }
 
+.talk:hover .label2{
+  transform: translateX(22px);
+  transition-delay: .15s;
+}
+
 .talk:hover .arrow{
+  opacity: 0;
+  transform: translateX(-6px);
+  transition-delay: .15s;
+}
+
+.talk:hover .arrow2{
   opacity: 0;
   transform: translateX(-6px);
   transition-delay: .15s;
