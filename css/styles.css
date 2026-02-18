@@ -47,40 +47,10 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 a, button {
- /* cursor: none !important;  Meti !imporant para o cursor default não aparecer em links */
+  /* Meti !imporant para o cursor default não aparecer em links */
   text-decoration: none;
   color: inherit;
   position: relative; /* Necessário para aparecer o underline em hovers */
-}
-
-span { /* Spans com diferentes espaçamentos para cada "↗" */
-    display: inline-block;
-    vertical-align: bottom;
-    line-height: 1;
-}
-
-.span3 {
-    padding-left: 0.7rem;
-    display: inline-block;
-    vertical-align: bottom;
-    font-size: 0.9em;
-    line-height: 1;
-}
-
-.span4 {
-    padding-left: 0.3rem;
-}
-
-.span5 {
-    padding-left: 0.3rem;
-    line-height: 1.05;
-}
-
-.span6 { /* Spans com diferentes espaçamentos para cada "↗" */
-    padding-left: 0.5rem;
-    display: inline-block;
-    vertical-align: bottom;
-    line-height: 1;
 }
 
 /* HOME PAGE */
@@ -96,23 +66,43 @@ header { /* Header */
     mix-blend-mode: difference;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 93%;
+nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 93%;
 }
 
-.logo, nav ul {
-    font-size: 1.12rem;
-    font-weight: 300;
+.nav-right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* UL começa no meio, talk encosta à direita */
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    color:white;
+.nav-links{
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo{
+  justify-self: start;
+}
+
+/* UL começa exatamente no meio do ecrã */
+nav ul{
+  justify-self: start;     /* começa no início da 2ª coluna (meio do viewport) */
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.talk{
+  justify-self: end;
 }
 
 nav a {
@@ -133,7 +123,7 @@ nav a::after,
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 nav a:hover::after,
