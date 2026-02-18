@@ -660,6 +660,14 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   grid-template-columns: 200px 1fr;
   padding: 1.5rem 0;
   border-bottom: 1px solid #c8c7c7;
+  justify-items: start;
+}
+
+.info-row span{
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  justify-self: start;
 }
 
 .info-row span:first-child{
@@ -670,7 +678,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 /* coluna direita */
 .info-row span:last-child{
   font-size: 1.12rem;
-  text-align: right;
+  justify-self: end;
 }
 
 .project-description{
@@ -1016,7 +1024,6 @@ dd {
     font-size: 1.12rem;
     width: 50%;
 }
-
 
 @media (hover: none), (pointer: coarse) {
   #meu_cursor {
