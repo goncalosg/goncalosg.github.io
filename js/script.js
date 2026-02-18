@@ -89,63 +89,79 @@ function smoothScroll() {
     isScrolling = false; // Termina a animação quando chega perto do alvo
   }
 }
+
 function buildSwapTitle(el){
-    const topText = el.textContent.trim();
-    const bottomText = (el.dataset.hover || topText).trim();
+  const topText = el.textContent.trim();
+  const bottomText = (el.dataset.hover || topText).trim();
 
-    const makeLine = (text, cls) => {
-      const line = document.createElement('span');
-      line.className = `line ${cls}`;
+  const makeLine = (text, cls) => {
+    const line = document.createElement("span");
+    line.className = `line ${cls}`;
 
-      [...text].forEach((ch, i) => {
-        const s = document.createElement('span');
-        s.className = 'char';
-        s.textContent = ch === ' ' ? '\u00A0' : ch;
-        s.style.transitionDelay = `${i * 0.025}s`;
-        line.appendChild(s);
-      });
+    const content = document.createElement("span");
+    content.className = "content";
 
-      return line;
-    };
+    [...text].forEach((ch, i) => {
+      const s = document.createElement("span");
+      s.className = "char";
+      s.textContent = ch === " " ? "\u00A0" : ch;
+      s.style.transitionDelay = `${i * 0.025}s`;
+      content.appendChild(s);
+    });
 
-    const lines = document.createElement('span');
-    lines.className = 'lines';
+    line.appendChild(content);
+    return line;
+  };
 
-    const topLine = makeLine(topText, 'top');
-    const bottomLine = makeLine(bottomText, 'bottom');
+  const lines = document.createElement("span");
+  lines.className = "lines";
 
-    lines.appendChild(topLine);
-    lines.appendChild(bottomLine);
+  const topLine = makeLine(topText, "top");
+  const bottomLine = makeLine(bottomText, "bottom");
 
-    el.textContent = '';
-    el.appendChild(lines);
+  lines.appendChild(topLine);
+  lines.appendChild(bottomLine);
 
-    const update = () => {
-      // 1) altura segura da janela (em px)
-      const fs = parseFloat(getComputedStyle(el).fontSize) || 16;
-      lines.style.height = `${fs * 1.25}px`; // 1.25x costuma ser perfeito
+  el.textContent = "";
+  el.appendChild(lines);
 
-      // 2) widths para underline
-      const topW = topLine.getBoundingClientRect().width;
-      const botW = bottomLine.getBoundingClientRect().width;
-      el.style.setProperty('--u', `${topW}px`);
-      el.style.setProperty('--u-hover', `${botW}px`);
-    };
+  const topContent = topLine.querySelector(".content");
+  const bottomContent = bottomLine.querySelector(".content");
 
-    // esperar pelas fonts
-    if (document.fonts?.ready) {
-      document.fonts.ready.then(() => {
-        update();
-        requestAnimationFrame(update);
-      });
-    } else {
-      requestAnimationFrame(update);
-      setTimeout(update, 80);
-    }
+  const update = () => {
+    // altura segura
+    const fs = parseFloat(getComputedStyle(el).fontSize) || 16;
+    lines.style.height = `${fs * 1.25}px`;
 
-    window.addEventListener('resize', update);
+    // medir larguras REAIS do texto (content)
+    const topW = topContent.getBoundingClientRect().width;
+    const botW = bottomContent.getBoundingClientRect().width;
+
+    const wMax = Math.max(topW, botW);
+
+    // janela sempre grande o suficiente (evita corte)
+    el.style.setProperty("--wmax", `${wMax}px`);
+
+    // underline por frase
+    el.style.setProperty("--u", `${topW}px`);
+    el.style.setProperty("--u-hover", `${botW}px`);
+  };
+
+  const scheduleUpdate = () => {
+    update();
+    requestAnimationFrame(update);
+  };
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleUpdate);
+  } else {
+    scheduleUpdate();
+    setTimeout(update, 100);
   }
 
-  document.querySelectorAll('.swap-title').forEach(buildSwapTitle);
+  window.addEventListener("resize", update);
+}
+
+document.querySelectorAll(".swap-title").forEach(buildSwapTitle);
 
 });

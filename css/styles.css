@@ -858,65 +858,58 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 .text-wrapper .swap-title{
   position: relative;
   display: inline-block;
-  width: var(--wmax, max-content); 
-  max-width: 100%;
+  width: var(--wmax, max-content);
   line-height: 1.1;
-  letter-spacing: 0;
   color: #FAFAFA;
 }
 
-/* janela que recorta o movimento */
+/* janela */
 .text-wrapper .swap-title .lines{
   position: relative;
   display: inline-block;
-  width: max-content;      /* <<< CRÍTICO: dá largura ao conteúdo */
-  height: 1.2em;           /* <<< evita cortar a fonte */
+  width: var(--wmax, max-content);
+  height: 1.2em;
   overflow: hidden;
-  padding-bottom: .35rem;  /* espaço para underline */
+  padding-bottom: .35rem;
 }
 
-/* TOP fica “normal” para definir largura */
-.text-wrapper .swap-title .line.top{
-  position: relative;      /* <<< define a largura do bloco */
-  display: inline-flex;
-  white-space: nowrap;
+/* cada linha ocupa a largura da janela, para permitir centrar */
+.text-wrapper .swap-title .line{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  gap: 0;
-  left: 0;
-  transform: none;
+  white-space: nowrap;
 }
 
-/* BOTTOM sobrepõe exatamente em cima do TOP */
+/* bottom por cima do top */
 .text-wrapper .swap-title .line.bottom{
   position: absolute;
-  justify-content: center;
-  left: 50%;
+  left: 0;
   top: 0;
+}
+
+/* o “conteúdo” é o que abraça o texto */
+.text-wrapper .swap-title .content{
   display: inline-flex;
-  white-space: nowrap;
   gap: 0;
-  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 /* letras */
 .text-wrapper .swap-title .char{
   display: inline-block;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 0;
   transition: transform .55s ease;
   will-change: transform;
 }
 
-/* estados (bem escondido) */
+/* estados */
 .text-wrapper .swap-title .top .char{ transform: translateY(0); }
 .text-wrapper .swap-title .bottom .char{ transform: translateY(150%); }
 
-/* hover só no h2 */
 .text-wrapper .swap-title:hover .top .char{ transform: translateY(-150%); }
 .text-wrapper .swap-title:hover .bottom .char{ transform: translateY(0); }
 
-/* underline animada por largura (controlada por JS) */
+/* underline */
 .text-wrapper .swap-title::after{
   content:"";
   position:absolute;
@@ -924,16 +917,14 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   height: 2px;
   background: #FAFAFA;
 
-  /* agora o underline usa o centro real da palavra */
-  left: var(--cx, 50%);
+  left: 50%;
   width: var(--u, 0px);
-
   transform: translateX(-50%);
-  transition: width .45s ease, left .45s ease;
+  transition: width .45s ease;
 }
 
 .text-wrapper .swap-title:hover::after{
-  width: calc(var(--u-hover, var(--u, 0px)) - 6px);
+  width: var(--u-hover, var(--u, 0px));
 }
 
 /* ABOUT PAGE */
