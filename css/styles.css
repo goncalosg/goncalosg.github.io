@@ -691,7 +691,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 
 .project-description{
   margin-top: 5rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.4;
 }
 
@@ -930,42 +930,43 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 }
 
 /* ABOUT PAGE */
-.hero-about {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15rem;
-    margin-bottom: 25rem;
-  }
-  
-.about-container, .experience-container {
-  width: 93%;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+.hero-about{
+  margin-top: 10rem; /* mesma altura do header */
 }
 
-  .image-placeholder-about { /* Imagem à direita */
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem; 
-    width: 49.5%;
-    height: 98vh;
-    overflow: hidden;
-    border-radius: 0 1rem 1rem 0;
-  }
-  
-  .image-placeholder-about img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.about-container{
+  width: 93%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 15rem); /* 👈 CRÍTICO */
+}
 
-  .about-data { /* texto sobre mim */
-    width: 60%;
-  }
+.mainabout {
+    width: 93%;
+    margin: 0 auto;
+    padding-bottom: 8rem;
+}
+
+.mainabout p {
+    font-size: 3rem;
+}
+
+.image-placeholder-about{
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-placeholder-about img{
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-data{
+  display: flex;
+  flex-direction: column;
+}
 
 .experience-container h2 {
   font-family: "fontmedium";
@@ -974,11 +975,11 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 }
 
   .about-data h2 {
-        font-size: 1.25rem;
+    font-size: 1.25rem;
     padding-bottom: 0.25rem;
   }
 
-      .about-data h3 {
+    .about-data h3 {
     font-size: 1.25rem;
     opacity: 50%;
   }
@@ -986,8 +987,8 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   .about-data p {
     font-family: "fontregular";
     font-size: 1.25rem;
-    width: 50%;
-    padding: 2rem 0;
+    width: 75%;
+    padding-bottom: 2rem;
   }
 
   .social-links-about { /* Links de redes sociais */
@@ -1025,12 +1026,10 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 }
 
 .experience { /* Secção de experiência */
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 9rem;
+    margin: 7rem auto 0;
+    width: 93%;
   }
 
   .experience-container h2 {
@@ -1042,7 +1041,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .container-workexperience {
