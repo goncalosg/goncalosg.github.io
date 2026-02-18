@@ -1014,6 +1014,7 @@ dd {
 .li2 dd{
     text-align: left;
     font-size: 1.12rem;
+    width: 50%;
 }
 
 /*
