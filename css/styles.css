@@ -1171,7 +1171,7 @@ dd {
     /* WORKS PAGE */
     .allworks-section {
         padding-top: 12rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1.5rem;
     }
 
     .allworks-container h2 {
@@ -1454,7 +1454,7 @@ dd {
 
       /* WORKS PAGE */
     .allworks-container h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     }
 
     .allworks-section {
