@@ -638,7 +638,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 26rem;
+  gap: 24.8rem;
 }
 
 .project-left h1{
@@ -939,7 +939,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     position: absolute;
     top: 0.5rem;
     right: 0.5rem; 
-    width: 50%;
+    width: 49.5%;
     height: 98vh;
     overflow: hidden;
     border-radius: 0 1rem 1rem 0;
