@@ -179,18 +179,21 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 15rem 0 18rem;
+    padding: 15rem 0 13rem;
 }
 
 .container-about {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% / 50% */
     width: 93%;
 }
 
 .intro-text {
-    width: 40%;
     display: flex;
+}
+
+.intro-description {
+    width: 100%;
 }
 
 .intro-text h2 {
@@ -198,12 +201,9 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     font-family: "fontregular";
 }
 
-.intro-description {
-    width: 100%;
-}
-
 .intro-description p {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    width: 75%;
     padding-bottom: 2rem;
 }
 
