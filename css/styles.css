@@ -1544,6 +1544,17 @@ dd {
     height: 25rem;
     }
 
+    .text-wrapper .swap-title{
+  position: relative;
+  display: inline-block;
+  width: var(--wmax, max-content); 
+  max-width: 100%;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #FAFAFA;
+  font-size: 1.5rem;
+}
+
     /* ABOUT PAGE */
     .about-data {
         width: 100%;
