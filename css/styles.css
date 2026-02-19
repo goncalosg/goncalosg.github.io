@@ -1244,14 +1244,18 @@ dd {
     }
 
     /* ABOUT PAGE */
-    .hero-about {
-        margin-top: 4.5rem;
-        margin-bottom: 0rem;
-    }
 
-    .about-container {
-        flex-direction: column-reverse;
-    }
+    .about-container{
+  height: auto;
+}
+
+    .mainabout p {
+    font-size: 2rem;
+}
+
+    .image-placeholder-about{
+    height: 55vh; /* define nova altura */
+  }
 
     .about-data {
         width: 100%;
@@ -1268,15 +1272,6 @@ dd {
 
     .social-links-about a{
         font-size: 1.2rem;
-    }
-
-    .image-placeholder-about {
-        top: 0rem;
-        right: 0rem;
-        position: relative;
-        width: 100%;
-        border-radius: 0;
-        height: 92vh;
     }
 
       .experience {
@@ -1548,6 +1543,29 @@ dd {
 }
 
     /* ABOUT PAGE */
+
+    .hero-about{
+  margin-top: 8rem; /* mesma altura do header */
+}
+
+    .about-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainabout {
+    padding-bottom: 4rem;
+}
+
+    .mainabout p {
+    font-size: 1.5rem;
+}
+
+.image-placeholder-about img{
+  width: 100%;
+}
+
     .about-data {
         width: 100%;
     }
