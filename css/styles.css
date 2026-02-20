@@ -705,7 +705,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .project-text1 {
@@ -1249,16 +1249,23 @@ dd {
         opacity: 50%;
     }
 
-    /* PROJECT PAGE */
-    .project-hero{
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    }
-
-    .project-container{
+   /* PROJECT PAGE */
+        .project-container{
     grid-template-columns: 1fr;  /* tudo para baixo */
     gap: 2rem;
-    }
+  }
+
+         .project-text{
+    grid-template-columns: 1fr;  /* tudo para baixo */
+    gap: 2rem;
+      margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+ .project-hero{
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
 
     .project-left h1 {
         font-size: 3rem;
@@ -1531,6 +1538,10 @@ dd {
     }
 
     /* PROJECT PAGE */
+    .project-container{
+    grid-template-columns: 1fr;  /* tudo para baixo */
+    gap: 2rem;
+  }
     .image-placeholder-project {
         height: 100vh;
     }
@@ -1539,21 +1550,49 @@ dd {
         font-size: 2rem;
     }
 
-    .info-row{
-    grid-template-columns: 1fr; /* fica um em baixo do outro */
-    gap: 1rem;
-    }
+      .info-row{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .project-info{
+    padding: 0;
+    margin: 0;
+}
 
     .info-row span:first-child{
-    font-size: 1rem;
-    opacity: 50%;
-    }
+  opacity: 50%;
+}
 
-    /* coluna direita */
-    .info-row span:last-child{
+.project-description {
     font-size: 1.12rem;
-    text-align: left;
-    }
+}
+
+.project-description1 a {
+    font-size: 1.12rem;
+}
+
+.project-challengetitle {
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+
+.project-challenge {
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
+
+.project-wow {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+}
+
+/* coluna direita */
+.info-row span:last-child{
+  font-size: 1.12rem;
+  text-align: left;
+}
 
     .img-fullscreen3 {
         padding: 2rem 0;
@@ -1565,8 +1604,8 @@ dd {
     }
 
     .nextproject {
-        margin-top: 4rem;
-        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
     }
 
     .nextworks {
@@ -1585,7 +1624,7 @@ dd {
     height: 25rem;
     }
 
-    .text-wrapper .swap-title{
+.text-wrapper .swap-title{
   position: relative;
   display: inline-block;
   width: var(--wmax, max-content); 
