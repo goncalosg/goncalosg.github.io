@@ -802,7 +802,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 2.5rem auto 2rem;
+    margin: 3.5rem auto 2rem;
 }
 
 .nextworks {
