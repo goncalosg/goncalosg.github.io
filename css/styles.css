@@ -642,7 +642,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 
    /* DESCRIPTION */
  .project-hero{
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 .project-container{
@@ -693,6 +693,46 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
   margin-top: 5rem;
   font-size: 1.25rem;
   line-height: 1.4;
+}
+
+.project-description1 a{
+    padding-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.project-text {
+  width: 93%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24.8rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.project-text1 {
+    width: 93%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24.8rem;
+  margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.project-wow {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.project-challengetitle {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.project-challenge {
+    font-size: 1.25rem;
+    line-height: 1.4;
 }
 
 
