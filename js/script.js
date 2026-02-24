@@ -263,7 +263,7 @@ setTimeout(() => {
 });
 
 // animação opacity
-const DURATION = 800; // 800ms = 0.8s
+const DURATION = 600; // 800ms = 0.8s
 
 // Fade in
 window.addEventListener("DOMContentLoaded", () => {

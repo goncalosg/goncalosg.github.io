@@ -391,7 +391,7 @@ body.gg-visible .gg-hero{
 /* animação opacity */
 body {
   opacity: 1;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.6s ease;
 }
 
 /* começa invisível */
