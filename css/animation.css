@@ -387,3 +387,19 @@ body.gg-visible .gg-hero{
   #gg-loader{ display:none; }
   .gg-hero{ opacity:1; transform:none; transition:none; }
 }
+
+/* animação opacity */
+body {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+/* começa invisível */
+body.page-enter {
+  opacity: 0;
+}
+
+/* quando sai */
+body.page-exit {
+  opacity: 0;
+}

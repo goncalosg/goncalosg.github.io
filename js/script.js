@@ -261,3 +261,38 @@ setTimeout(() => {
 
   }, startFadeAt);
 });
+
+// animação opacity
+const DURATION = 800; // 800ms = 0.8s
+
+// Fade in
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("page-enter");
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.remove("page-enter");
+    });
+  });
+});
+
+// Fade out
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const url = new URL(link.href, window.location.href);
+
+  if (url.origin !== window.location.origin) return;
+  if (link.target === "_blank") return;
+  if (link.hasAttribute("download")) return;
+  if (url.pathname === window.location.pathname) return;
+
+  e.preventDefault();
+
+  document.body.classList.add("page-exit");
+
+  setTimeout(() => {
+    window.location.href = url.href;
+  }, DURATION);
+});
