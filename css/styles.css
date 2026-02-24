@@ -1744,6 +1744,30 @@ dd {
         height: 60vh;
         overflow: hidden;
     }
+    
+    .work-experience{
+    padding-top: 5rem; /* mais “para baixo” se quiseres */
+  }
+
+  .work-list{
+    width: 100%;
+  }
+
+  dl{
+    flex-direction: column;      /* dt em cima, dd em baixo */
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  dd{
+    width: 100%;
+    text-align: left;
+  }
+
+  .li2 dd{
+    width: 100%;
+    text-align: left;
+  }
 
     .experience {
         margin-top: 5rem;
@@ -1765,11 +1789,10 @@ dd {
 
       .work-list dt {
         font-size: 1rem;
-        width: 50%;
+        width: 100%;
       }
 
     .work-list dd {
-        width: 50%;
         font-size: 1rem;
       }
 }
