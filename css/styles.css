@@ -1413,13 +1413,22 @@ dd {
 
 @media (max-width: 480px) {
     /* Mobile */
-    .logo {
+.logo {
         font-size: 1rem;
     }
 
     nav a {
         font-size: 1rem;
     }
+
+     nav{
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-right{
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
 
     /* Hero */
   .hero {
