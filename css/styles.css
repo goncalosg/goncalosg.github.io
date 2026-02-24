@@ -1501,10 +1501,6 @@ dd {
         font-size: 1rem;
     }
 
-    .project-type {
-        opacity: 0.5;
-    }
-
     /* CTA */
     .collaborate {
     padding: 10rem 0;     /* em vez de padding:18rem no desktop */
@@ -1592,7 +1588,7 @@ dd {
     }
 
     .img-tablet img {
-        height: 16rem;
+        height: 23rem;
     }
 
     .img-tablet h3, .img-tablet p {
@@ -1744,7 +1740,7 @@ dd {
         height: 60vh;
         overflow: hidden;
     }
-    
+
     .work-experience{
     padding-top: 5rem; /* mais “para baixo” se quiseres */
   }
