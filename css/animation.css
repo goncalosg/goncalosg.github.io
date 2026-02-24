@@ -232,6 +232,12 @@
   transition: transform .45s ease;
 }
 
+/* seta: ajusta no baseline, não com top */
+.swap .spanarrow{
+  display: inline-block;
+  vertical-align: -0.08em; /* <<< ajusta: -0.06em a -0.18em */
+}
+
 /* texto visível */
 .swap .line-top{
   transform: translateY(0);
