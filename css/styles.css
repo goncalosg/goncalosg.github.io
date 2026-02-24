@@ -93,6 +93,12 @@ nav{
   display: block;
 }
 
+.logo2 img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 .logo {
   display: inline-flex;
   align-items: center;
