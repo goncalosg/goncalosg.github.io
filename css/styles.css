@@ -1344,6 +1344,10 @@ flex-direction: column;
         font-size: 1.2rem;
     }
 
+        .footer-left .footer-top {
+  font-size: 2rem;
+}
+
    /* PROJECT PAGE */
         .project-container{
     grid-template-columns: 1fr;  /* tudo para baixo */
