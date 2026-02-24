@@ -1488,9 +1488,9 @@ dd {
         height: auto;
     }
 
-    .projects-grid .img-wrapper img {
+    .projects .img-wrapper img {
         width: 100%;
-        height: 22rem;
+        height: 23rem;
     }
 
     .project-info {
