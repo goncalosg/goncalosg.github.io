@@ -1422,23 +1422,31 @@ dd {
     }
 
     /* Hero */
-    .hero {
-        height: 100vh;
-    }
+  .hero {
+    height: 100svh; /* melhor que 100vh em mobile */
+    position: relative;
+  }
 
-    .hero_container {
-        display: flex;
-        align-items: start;
-    }
+  .hero_container {
+    position: absolute;
+    inset: 0;              /* top:0; right:0; bottom:0; left:0 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 38vh 0 38vh;  /* ajusta aqui: mais/menos para cima/baixo */
+    width: 100%;
+  }
 
-    .myname {
-      font-size: 4rem;
-    }
+  .hero_container h4 {
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 0;     /* MUITO IMPORTANTE: remove o 12rem */
+  }
 
-    .hero_container h4 {
-        font-size: 1rem;
-        padding-bottom: 12rem;
-    }
+  .myname {
+    font-size: 4rem;
+  }
 
     /* Intro */
     .intro {
