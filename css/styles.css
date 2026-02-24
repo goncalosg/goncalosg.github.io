@@ -693,6 +693,29 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 .project-description1 a{
     padding-top: 1rem;
     font-size: 1.25rem;
+    position: relative;
+}
+
+.project-description1 a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-0.12rem;
+  width:100%;
+  height:0.1rem;
+  background: #171718;
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+/* quando entras (hover) */
+.project-description1 a:hover::after{
+  animation: underline-in 0.8s forwards;
+}
+
+/* quando sais (unhover) */
+.project-description1 a:not(:hover)::after{
+  animation: underline-out 0.8s forwards;
 }
 
 .project-text {
