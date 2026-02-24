@@ -259,3 +259,131 @@
 .swap:hover .line-bottom{
   transform: translateY(0);
 }
+
+/* ===== Loader BASE (isto garante o fundo preto) ===== */
+#gg-loader{
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  z-index: 2147483647; /* máximo prático */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+/* scroll lock robusto */
+html.gg-lock, body.gg-lock { height: 100%; overflow: hidden; }
+body.gg-lock{
+  position: fixed;
+  width: 100%;
+  top: var(--gg-scroll-top, 0px);
+  left: 0;
+  right: 0;
+  touch-action: none;
+}
+
+/* ===== Layout interno ===== */
+.gg-inner{
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+}
+
+/* Nome aparece logo (SEM animação de entrada) */
+.gg-type{
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+  opacity: 1;
+}
+
+/* cada letra vira um span */
+.gg-char{
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Iniciais por cima (inicialmente escondidas) */
+.gg-keep{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.01em;         /* lado a lado */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gg-keep span{
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  display: inline-block;
+}
+
+.gg-keep-left{ transform: translateX(-337px); }
+.gg-keep-right{ transform: translateX(78px); }
+
+/* ===== Animação: letra desaparece para cima ===== */
+@keyframes ggUpDisappear {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(-90px); }
+}
+
+/* quando começa o fade: mostra iniciais e esconde os G “do texto” para não duplicar */
+#gg-loader.gg-fade .gg-keep{
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+
+#gg-loader.gg-fade .gg-char[data-keep="1"]{
+  opacity: 0; /* esconde os 2 G do texto */
+}
+
+#gg-loader.gg-fade .gg-char:not([data-keep="1"]):not([data-space="1"]){
+  animation: ggUpDisappear var(--gg-dur, 260ms) ease forwards;
+  animation-delay: var(--gg-delay, 0ms);
+}
+
+/* juntar GG lado a lado */
+#gg-loader.gg-merge .gg-keep-left{
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1);
+  transform: translateX(-3px);
+}
+#gg-loader.gg-merge .gg-keep-right{
+  transition: transform 700ms cubic-bezier(.2,.9,.2,1);
+  transform: translateX(3px);
+}
+
+/* sair para cima */
+#gg-loader.gg-exit{
+  transition: transform 900ms cubic-bezier(.2,.9,.2,1);
+  transform: translateY(-110%);
+}
+
+/* Hero */
+.gg-hero{
+  min-height: 100vh;
+  padding: 8rem 6vw;
+  background: #fff;
+  color: #111;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+body.gg-visible .gg-hero{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Se tiveres reduce motion ligado, isto esconde a intro.
+   PARA DEBUG: comenta este bloco se necessário. */
+@media (prefers-reduced-motion: reduce){
+  #gg-loader{ display:none; }
+  .gg-hero{ opacity:1; transform:none; transition:none; }
+}

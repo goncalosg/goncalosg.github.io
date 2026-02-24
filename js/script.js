@@ -165,3 +165,99 @@ function buildSwapTitle(el){
 document.querySelectorAll(".swap-title").forEach(buildSwapTitle);
 
 });
+
+// animação entrada
+  window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("gg-loader");
+  const typeEl = document.querySelector(".gg-type");
+  const keepEl = document.querySelector(".gg-keep");
+
+  console.log("[gg] loader?", !!loader, "type?", !!typeEl, "keep?", !!keepEl);
+  console.log("[gg] reduced motion?", window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  if (!loader || !typeEl || !keepEl) return;
+
+  // ===== SCROLL LOCK =====
+  const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.body.style.setProperty("--gg-scroll-top", `-${scrollY}px`);
+  document.documentElement.classList.add("gg-lock");
+  document.body.classList.add("gg-lock");
+
+  // ===== Split letras =====
+  const text = typeEl.textContent.trim();
+  typeEl.textContent = "";
+
+  // manter 1ª letra de cada palavra (2 palavras => 2 iniciais)
+  const words = text.split(/\s+/);
+  const keepPositions = [];
+  let pos = 0;
+  for (let i = 0; i < words.length; i++) {
+    keepPositions.push(pos);            // primeira letra da palavra
+    pos += words[i].length + 1;         // + espaço
+  }
+  const keepSet = new Set(keepPositions);
+
+  const spans = [];
+  [...text].forEach((ch, i) => {
+    const s = document.createElement("span");
+    s.className = "gg-char";
+    if (ch === " ") {
+  s.textContent = "\u00A0";
+  s.style.marginRight = "0.6em"; // controla o espaço aqui
+  s.dataset.space = "1";
+} else {
+  s.textContent = ch;
+}
+
+    if (keepSet.has(i)) s.dataset.keep = "1";
+    if (ch === " ") s.dataset.space = "1";
+
+    typeEl.appendChild(s);
+    spans.push(s);
+  });
+
+  // Só 2 iniciais (primeiras 2 palavras)
+  const keptLetters = spans.filter(s => s.dataset.keep === "1").map(s => s.textContent);
+  keepEl.querySelector(".gg-keep-left").textContent = keptLetters[0] || "G";
+  keepEl.querySelector(".gg-keep-right").textContent = keptLetters[1] || "G";
+
+  // ===== Timeline =====
+  const startFadeAt = 700; // nome aparece logo
+  const step = 45;
+  const dur = 260;
+
+  setTimeout(() => {
+    loader.classList.add("gg-fade");
+
+    let order = 0;
+    spans.forEach((s) => {
+      if (s.dataset.space === "1") return;
+      if (s.dataset.keep === "1") return;
+
+      s.style.setProperty("--gg-delay", `${order * step}ms`);
+      s.style.setProperty("--gg-dur", `${dur}ms`);
+      order++;
+    });
+
+    const fadeTotal = (order * step) + dur + 150;
+
+    setTimeout(() => loader.classList.add("gg-merge"), fadeTotal);
+
+    setTimeout(() => {
+  loader.classList.add("gg-exit");
+  document.body.classList.add("gg-visible");
+
+  // ✅ desbloqueia já aqui
+  document.documentElement.classList.remove("gg-lock");
+  document.body.classList.remove("gg-lock");
+  document.body.style.removeProperty("--gg-scroll-top");
+  window.scrollTo(0, scrollY);
+}, fadeTotal + 900);
+
+// ✅ remover só o overlay depois, mas sem bloquear o site
+setTimeout(() => {
+  loader.remove();
+}, fadeTotal + 900 + 950);
+
+  }, startFadeAt);
+});
