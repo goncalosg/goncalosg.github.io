@@ -87,8 +87,17 @@ nav{
   padding: 0;
 }
 
-.logo{
-  justify-self: start;
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  width: 24px;
+  text-decoration: none; /* 👈 remove underline */
 }
 
 /* UL começa exatamente no meio do ecrã */
@@ -110,7 +119,7 @@ nav a {
     color: white;
 }
 
-nav a::after,
+.nav-links a::after,
 .see-more-container a::after,
 .social-links a::after,
 .intro-description a::after { /* Animação do underline em hover */
