@@ -1270,9 +1270,25 @@ dd {
         width: 100%;
     }
 
-    .projects .img-wrapper img {
-        height: 40rem;
+        .projects-grid {
+  display: flex;
+flex-direction: column;
+}
+
+    .projects-grid .img-wrapper img {
+        width: 100%;
+        height: 35rem;
     }
+
+    .image-container {
+  height: 35rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.image-container--featured {
+  height: 35rem; /* opcional: destaque maior */
+}
 
     /* CTA */
     .collaborate {
@@ -1521,7 +1537,17 @@ dd {
         height: auto;
     }
 
-    .projects .img-wrapper img {
+     .projects-featured .img-wrapper img {
+      height: 23rem;
+    }
+
+    /* 2 projetos em baixo */
+.projects-grid {
+  display: flex;
+flex-direction: column;
+}
+
+    .projects-grid .img-wrapper img {
         width: 100%;
         height: 23rem;
     }
