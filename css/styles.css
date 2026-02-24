@@ -304,21 +304,17 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     transform: scale(1.02);
   }
   
-  .project-info {
+  .project-info1 {
     display: flex;
     justify-content: space-between;
     margin-top: 0.5rem;
   }
 
-    .project-info p{
+    .project-info1 p{
     color: #0E0E0E;
     font-size: 1.12rem;
     font-family: 'fontregular';
     margin: 0.25rem 0;
-  }
-
-  .project-type {
-    opacity: 0.5;
   }
 
 /* Collaborate Section */
@@ -394,7 +390,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 }
 
 .footer-left .footer-top {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 100;
 }
 
