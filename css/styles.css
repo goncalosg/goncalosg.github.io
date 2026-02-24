@@ -1026,36 +1026,38 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 
   .social-links-about { /* Links de redes sociais */
   display: flex;
-  flex-direction: column;
   list-style: none;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
 .social-links-about a {
     color: #171718;
     font-family: "fontregular";
     font-size: 1.25rem;
-    padding-bottom: 0.3rem;
     position: relative;
     transition: color 0.3s ease-in-out;
 }
 
-.social-links-about a::after { /* Animação hover underline */
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.12rem;  
-    width: 100%;
-    height: 0.12rem;  
-    background-color: #171718;
-    transform: scaleX(0);
-    transform-origin: right center;
-    transition: transform 0.3s ease;
+.social-links-about a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-0.12rem;
+  width:100%;
+  height:0.1rem;
+  background: #171718;
+  transform: scaleX(1);
+  transform-origin: right;
 }
 
-.social-links-about a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left center;
+/* quando entras (hover) */
+.social-links-about a:hover::after{
+  animation: underline-in 0.8s forwards;
+}
+
+/* quando sais (unhover) */
+.social-links-about a:not(:hover)::after{
+  animation: underline-out 0.8s forwards;
 }
 
 .experience { /* Secção de experiência */
