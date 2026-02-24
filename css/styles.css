@@ -1241,10 +1241,6 @@ dd {
         font-size: 1.2rem;
     }
 
-    .img-tablet p {
-        opacity: 50%;
-    }
-
    /* PROJECT PAGE */
         .project-container{
     grid-template-columns: 1fr;  /* tudo para baixo */
