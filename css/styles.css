@@ -1490,7 +1490,7 @@ dd {
 
     .projects-grid .img-wrapper img {
         width: 100%;
-        height: 23rem;
+        height: 22rem;
     }
 
     .project-info {
@@ -1715,6 +1715,7 @@ dd {
 
     .mainabout p {
     font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 .image-placeholder-about img{
