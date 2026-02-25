@@ -222,7 +222,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 15rem 0 13rem;
+    padding: 10rem 0 10rem;
 }
 
 .container-about {
@@ -231,24 +231,35 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     width: 93%;
 }
 
+/* já não precisam de width */
 .intro-text {
     display: flex;
 }
 
+.intro-text h2 {
+  font-size: 1.2rem;
+}
+
 .intro-description {
     width: 100%;
+    list-style: none;
 }
 
 .intro-description p {
-    font-size: 1.5rem;
-    width: 75%;
+    font-size: 2.5rem;
+    width: 100%;
     padding-bottom: 2rem;
 }
 
+.intro-description li {
+  font-size: 1.12rem;
+}
+
 .intro-description a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "fontregular";
     position: relative;
+    padding-top: 2rem;
 }
 
 .intro-description a::after { /* Default, a linha mantém */
