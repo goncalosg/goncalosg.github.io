@@ -1257,6 +1257,7 @@ dd {
 
     .intro-description p {
         width: 100%;
+        font-size: 1.75rem;
     }
 
     /* Featured Works */
@@ -1516,7 +1517,7 @@ flex-direction: column;
     }
 
     .intro-text h2 {
-        font-size: 1.25rem;
+        font-size: 1rem;
         padding-bottom: 2rem;
     }
 
