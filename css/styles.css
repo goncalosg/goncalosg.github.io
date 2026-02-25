@@ -1479,7 +1479,7 @@ flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 38vh 0 38vh;  /* ajusta aqui: mais/menos para cima/baixo */
+    padding: 34vh 0 34vh;  /* ajusta aqui: mais/menos para cima/baixo */
     width: 100%;
   }
 
