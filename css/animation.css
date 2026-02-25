@@ -263,8 +263,8 @@
 #gg-loader{
   position: fixed;
   inset: 0;
-  background: #000;
-  color: #fff;
+  background: #fafafa;
+  color: #000;
   z-index: 2147483647; /* máximo prático */
   display: grid;
   place-items: center;
