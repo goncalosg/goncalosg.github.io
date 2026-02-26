@@ -1404,7 +1404,7 @@ flex-direction: column;
     }
 
     .allworks-container h2 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
     
     .projects_section {
@@ -1733,7 +1733,11 @@ flex-direction: column;
 
       /* WORKS PAGE */
     .allworks-container h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    }
+
+     .works-count {
+      font-size: 0.87rem;
     }
 
     .allworks-section {
