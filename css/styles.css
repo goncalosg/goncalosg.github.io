@@ -1880,12 +1880,12 @@ flex-direction: column;
     }
 
     .about-data p {
-        font-size: 1rem;
+        font-size: 1.12rem;
         line-height: 1.5;
     }
 
     .social-links-about a {
-        font-size: 1rem;
+        font-size: 1.12rem;
     }
 
     .image-placeholder-about {
@@ -1899,7 +1899,7 @@ flex-direction: column;
     }
 
     .work-experience{
-    padding-top: 5rem; /* mais “para baixo” se quiseres */
+    padding-top: 1,5rem; /* mais “para baixo” se quiseres */
   }
 
   .work-list{
@@ -1927,7 +1927,7 @@ flex-direction: column;
     }
 
     .experience-container h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
       
       .work-text h3 {
@@ -1941,11 +1941,11 @@ flex-direction: column;
       }
 
       .work-list dt {
-        font-size: 1rem;
+        font-size: 1.12rem;
         width: 100%;
       }
 
     .work-list dd {
-        font-size: 1rem;
+        font-size: 1.12rem;
       }
 }
