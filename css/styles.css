@@ -1482,17 +1482,26 @@ flex-direction: column;
 
     /* ABOUT PAGE */
 
-    .about-container{
-  height: auto;
-}
-
     .mainabout p {
     font-size: 2rem;
 }
+   .hero-about{
+  margin-top: 8rem; /* mesma altura do header */
+}
 
-    .image-placeholder-about{
-    height: 55vh; /* define nova altura */
-  }
+    .about-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainabout {
+    padding-bottom: 4rem;
+}
+
+.image-placeholder-about img{
+  width: 100%;
+}
 
     .about-data {
         width: 100%;
