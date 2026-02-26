@@ -546,7 +546,7 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10rem 0 8rem;
+    padding: 10rem 0 3rem;
 }
 
 .allworks-container,
@@ -554,12 +554,38 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 .tablet-container {
   width: 93%;
   display: flex;
-  justify-content: space-between;
+justify-content: flex-start;
+align-items: flex-end; /* alinha o (6) pela base do h2 */
+gap: 0.1rem;             /* controla a distância entre h2 e p */
 }
 
 .allworks-container h2 {
     font-family: "fontmedium";
     font-size: 5rem;
+    line-height: 1;
+}
+
+.allworks-container p {
+  font-size: 1.25rem;
+}
+
+.allworks-container{
+  width: 93%;
+}
+
+.allworks-container h2{
+  font-family: "fontmedium";
+  font-size: 5rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.works-count{
+  font-size: 1.25rem;
+  opacity: .6;
+  vertical-align: baseline; /* mantém na linha */
+  display: inline-block;
+  transform: translateY(-0.15rem); /* ajuste óptico */
 }
 
 .projects_section { /* Secção de projectos */
@@ -603,6 +629,8 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 
 .arrow-icon { /* Ícone à direita */
     opacity: 50%;
+
+  transform: translateY(2px);
 }
 
 .projects_list li a:hover { /* Animação hover que faz mexer tudo para a direita */
@@ -634,23 +662,75 @@ nav a.active { /* Na página ativa vai reduzir a opacidade do link */
 }
 
 .text_container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
 
-.text_container .left, .text_container .right {
-    width: 50%;
-    display: flex;
-    justify-content: flex-start;
+.text_container .left {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 26ch 22ch 6ch; /* Project | Type | Year */
+  column-gap: 2rem;                    /* aqui controlas o “encostado” */
+  align-items: center;
 }
 
 .text_container .iconright {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-} 
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
 
-.tabletwork { /* Versão em mobile */
+/* opcional mas recomendado: evita que nomes enormes empurrem tudo */
+.text_container .left h3{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* tirar margens default que lixam alinhamento */
+.text_container h3,
+.text_container p {
+  margin: 0;
+}
+.iconright p {
+    opacity: 0;
+    transform: translateX(-0.25rem);
+    transition: all 0.3s ease;
+}
+
+.projects_list li a:hover .iconright p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.iconright {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;   /* controla o espaço entre texto e seta */
+}
+
+.projects_header {
+    padding: 1rem 0;
+    border-bottom: 1px solid #c8c7c7;
+}
+
+.projects_header p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+}
+
+.projects_header:hover {
+    translate: none;
+}
+
+/* Versão em mobile */
+.tabletwork { 
     width: 100%;
     display: none;
     flex-direction: column;
