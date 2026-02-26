@@ -263,20 +263,10 @@ setTimeout(() => {
 });
 
 // animação opacity
-const DURATION = 600; // 800ms = 0.8s
+// animação transition
+const overlay = document.getElementById("page-transition");
+const DURATION = 1000;
 
-// Fade in
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("page-enter");
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      document.body.classList.remove("page-enter");
-    });
-  });
-});
-
-// Fade out
 document.addEventListener("click", (e) => {
   const link = e.target.closest("a");
   if (!link) return;
@@ -290,7 +280,7 @@ document.addEventListener("click", (e) => {
 
   e.preventDefault();
 
-  document.body.classList.add("page-exit");
+  overlay.style.transform = "translateY(0%)";
 
   setTimeout(() => {
     window.location.href = url.href;
